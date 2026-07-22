@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>UVE STUDIO — 교육이 끝나면, 업무가 바뀌어 있어야 합니다</title>
-<meta name="description" content="UVE는 직무별 AX 워크숍, 업무 자동화 PoC, AI Agent 구축을 하나의 실행 로드맵으로 연결합니다.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<title>Vessel AX Studio - 교육이 끝나면, 업무가 바뀌어 있어야 합니다</title>
+<meta name="description" content="Vessel은 직무별 AX 워크숍, 업무 자동화 PoC, AI Agent 구축을 하나의 실행 로드맵으로 연결합니다.">
 <!-- 생성: Claude Fable 5 2026-07-20 | 검토: 미검토 -->
-<!-- v4 — 폰트/레이아웃 참고: nbcamp.spartaclub.kr (Pretendard 웨이트 위계 / 클린 뉴트럴 레이아웃) -->
+<!-- v4 - 폰트/레이아웃 참고: nbcamp.spartaclub.kr (Pretendard 웨이트 위계 / 클린 뉴트럴 레이아웃) -->
 <!-- 핵심: 세리프 악센트 제거 → Pretendard 전용. 헤드 800 / 서브헤드 700 / 본문 500(Medium) -->
-<!-- ⚠️ G1: "UVE STUDIO (가칭)" / G0: 가격 IA 초안 / G2: 사례 [채움 예정] -->
+<!-- ⚠️ G0: 가격 IA 초안 / G2: 사례 [파일럿 후 실측 교체] -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -53,7 +53,7 @@ h3{font-size:20px;font-weight:700;letter-spacing:-0.02em;line-height:1.4}
 section{padding:120px 0}
 .sec-tint{background:var(--tint)}
 .sec-dark{background:var(--dark);color:#EEE9F4}
-/* 섹션 헤더 — 가운데 정렬 (Sparta 패턴) */
+/* 섹션 헤더 - 가운데 정렬 (Sparta 패턴) */
 .sec-head{text-align:center;max-width:680px;margin:0 auto 64px}
 .sec-head .eyebrow{display:block;margin-bottom:16px}
 .sec-head h2{margin-bottom:18px}
@@ -61,7 +61,7 @@ section{padding:120px 0}
 .sec-dark .sec-head .eyebrow{color:var(--hl)}
 .sec-dark .lead{color:#B4A9C4}
 
-/* ---------- nav (다크 — 티커/히어로와 통일) ---------- */
+/* ---------- nav (다크 - 티커/히어로와 통일) ---------- */
 nav{position:sticky;top:0;z-index:40;background:rgba(20,16,25,.85);backdrop-filter:blur(16px) saturate(1.3);border-bottom:1px solid rgba(168,85,247,.16)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
 .logo{font-weight:800;font-size:19px;text-decoration:none;letter-spacing:-0.03em;display:flex;align-items:center;gap:8px;color:#fff}
@@ -90,10 +90,9 @@ nav .btn-fill:hover{background:#9333ea}
 /* ---------- hero (다크) ---------- */
 .hero{padding:92px 0 108px;position:relative;overflow:hidden;background:var(--dark);color:#EEE9F4}
 .hero::before{content:"";position:absolute;inset:-30%;background:
-  radial-gradient(42% 52% at 78% 24%,rgba(168,85,247,.36),transparent 60%),
-  radial-gradient(38% 48% at 92% 68%,rgba(75,29,120,.5),transparent 62%),
-  radial-gradient(30% 40% at 60% 92%,rgba(245,208,254,.12),transparent 60%);
-  filter:blur(52px);pointer-events:none}
+  linear-gradient(115deg,transparent 0%,rgba(75,29,120,.26) 58%,rgba(168,85,247,.2) 100%),
+  radial-gradient(76% 82% at 86% 22%,rgba(168,85,247,.22),transparent 72%);
+  filter:blur(34px);pointer-events:none}
 .hero::after{content:"";position:absolute;inset:0;background:var(--grain);opacity:.13;mix-blend-mode:overlay;pointer-events:none}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
 .hero .eyebrow{display:inline-flex;align-items:center;gap:12px;color:#C9BEDA;font-weight:600;font-size:13.5px;letter-spacing:0.04em;margin-bottom:26px}
@@ -107,15 +106,16 @@ nav .btn-fill:hover{background:#9333ea}
 .hero .btn-line{background:transparent;border-color:rgba(168,85,247,.4);color:#EEE9F4}
 .hero .btn-line:hover{border-color:var(--point);color:#fff}
 
-/* 히어로 모션 패널 — 로고 마크 + 철학 키워드 슝슝 */
+/* 히어로 모션 패널 - 리포트 목업 */
 .stage{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center}
-.stage .glow{position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,.45),transparent 66%);filter:blur(20px)}
-.stage .ring{position:absolute;width:300px;height:300px;border-radius:50%;border:1px solid rgba(168,85,247,.3);animation:spin 18s linear infinite}
+.stage .glow{position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,.26),transparent 66%);filter:blur(24px)}
+.stage .ring{position:absolute;width:300px;height:300px;border-radius:50%;border:1px solid rgba(168,85,247,.16);animation:spin 18s linear infinite}
 .stage .ring::before{content:"";position:absolute;top:-5px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--hl);box-shadow:0 0 16px 2px rgba(245,208,254,.8);transform:translateX(-50%)}
-.stage .ring2{width:220px;height:220px;border-color:rgba(245,208,254,.18);animation:spin 12s linear infinite reverse}
+.stage .ring2{width:220px;height:220px;border-color:rgba(245,208,254,.1);animation:spin 12s linear infinite reverse}
 .stage .ring2::before{width:7px;height:7px;background:var(--point)}
 @keyframes spin{to{transform:rotate(360deg)}}
 .stage .core{position:relative;z-index:2;width:132px;height:132px;border-radius:32px;background:linear-gradient(150deg,#2a1440,#160820);border:1px solid rgba(168,85,247,.35);display:flex;align-items:center;justify-content:center;box-shadow:0 30px 70px -30px rgba(168,85,247,.6);animation:floaty 6s ease-in-out infinite alternate}
+.stage .hero-img{position:relative;z-index:3;width:min(100%,540px);aspect-ratio:1.62/1;object-fit:cover;display:block;border-radius:28px;box-shadow:0 34px 92px -34px rgba(0,0,0,.78),0 0 0 1px rgba(245,208,254,.18);animation:floaty 6s ease-in-out infinite alternate}
 @keyframes floaty{to{transform:translateY(-12px)}}
 .stage .core .mk{width:72px;height:72px}
 .stage .kw{position:absolute;font-size:13px;font-weight:600;color:#EEE9F4;background:rgba(255,255,255,.06);border:1px solid rgba(168,85,247,.3);backdrop-filter:blur(6px);border-radius:100px;padding:9px 15px;white-space:nowrap;box-shadow:0 14px 30px -14px rgba(0,0,0,.6);animation:drift 7s ease-in-out infinite alternate}
@@ -127,17 +127,16 @@ nav .btn-fill:hover{background:#9333ea}
 .kw4{bottom:6%;right:4%;animation-duration:6.5s;animation-delay:.2s}
 .kw5{top:46%;right:10%;animation-duration:9s;animation-delay:1s}
 @media(max-width:920px){.hero .wrap{grid-template-columns:1fr;gap:36px}.stage{min-height:360px}}
-@media(max-width:520px){.kw5{display:none}}
+@media(max-width:520px){.kw5{display:none}.stage .ring,.stage .glow{display:none}}
+@media(max-width:520px){.hero::before{background:linear-gradient(120deg,transparent 0%,rgba(75,29,120,.24) 58%,rgba(168,85,247,.18) 100%);filter:blur(20px)}}
 
 /* ---------- 플로팅 CTA 레일 (오른쪽 고정) ---------- */
 .fab{position:fixed;right:22px;bottom:26px;z-index:50;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-.fab .fab-cta{position:relative;display:inline-flex;align-items:center;gap:11px;white-space:nowrap;background:linear-gradient(150deg,#6b30a8,var(--main));color:#fff;font-weight:700;font-size:15px;letter-spacing:-0.01em;padding:12px 24px 12px 12px;border-radius:100px;text-decoration:none;box-shadow:0 14px 36px -10px rgba(75,29,120,.75),inset 0 1px 0 rgba(255,255,255,.16);transition:all .22s}
-.fab .fab-cta::before{content:"";position:absolute;inset:0;border-radius:100px;border:2px solid var(--point);animation:fpulse 2.2s ease-out infinite;pointer-events:none}
-@keyframes fpulse{0%{transform:scale(1);opacity:.55}70%{transform:scale(1.16);opacity:0}100%{opacity:0}}
-.fab .fab-cta:hover{transform:translateY(-3px);box-shadow:0 20px 44px -10px rgba(75,29,120,.85),inset 0 1px 0 rgba(255,255,255,.16)}
-.fab .fab-cta .ic{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;animation:ispin 8s linear infinite}
-@keyframes ispin{to{transform:rotate(360deg)}}
-.fab .fab-cta .ic svg{width:20px;height:20px}
+.fab .fab-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(150deg,#5a2790,var(--main));color:#fff;font-weight:700;font-size:15px;letter-spacing:-0.01em;padding:16px 22px;border-radius:18px;text-decoration:none;box-shadow:0 12px 34px -10px rgba(75,29,120,.7),inset 0 1px 0 rgba(255,255,255,.14);transition:all .22s}
+.fab .fab-cta:hover{transform:translateY(-3px);box-shadow:0 18px 40px -10px rgba(75,29,120,.8),inset 0 1px 0 rgba(255,255,255,.14)}
+.fab .fab-cta span{white-space:nowrap}
+.fab .fab-cta .ic{width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fab .fab-cta .ic svg{width:15px;height:15px}
 .fab .fab-top{width:48px;height:48px;border-radius:14px;background:#fff;border:1px solid var(--line);color:var(--main);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 26px -10px rgba(75,29,120,.4);opacity:0;transform:translateY(10px);pointer-events:none;transition:all .25s;align-self:flex-end}
 .fab .fab-top.show{opacity:1;transform:none;pointer-events:auto}
 .fab .fab-top:hover{background:var(--tint);transform:translateY(-2px)}
@@ -155,6 +154,7 @@ nav .btn-fill:hover{background:#9333ea}
 .clients:hover .ctrack{animation-play-state:paused}
 .clogo{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 22px;font-weight:800;font-size:15.5px;letter-spacing:-0.03em;color:#4a4356;flex-shrink:0}
 .clogo .cd{width:9px;height:9px;border-radius:3px;background:linear-gradient(135deg,var(--main),var(--point));transform:rotate(45deg);flex-shrink:0}
+.clogo b{font-weight:800;color:var(--main)}
 
 /* ---------- 문제 (뉴트럴 카드 그리드) ---------- */
 .problem .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -193,6 +193,11 @@ nav .btn-fill:hover{background:#9333ea}
 @media(max-width:820px){.values .card.w7,.values .card.w5{grid-column:span 12}}
 
 /* ---------- 프로세스 (한 줄 타임라인) ---------- */
+.process .photos{display:grid;grid-template-columns:1.18fr .82fr;gap:16px;margin:0 auto 22px;max-width:960px}
+.process .photo{position:relative;overflow:hidden;border-radius:20px;border:1px solid var(--line);background:#fff;min-height:220px;box-shadow:0 20px 44px -32px rgba(75,29,120,.3)}
+.process .photo img{width:100%;height:100%;aspect-ratio:1.8/1;object-fit:cover;display:block}
+.process .photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(20,16,25,.42));pointer-events:none}
+.process .photo b{position:absolute;left:18px;bottom:17px;z-index:1;color:#fff;font-size:15px;letter-spacing:-0.02em;text-shadow:0 1px 16px rgba(0,0,0,.42)}
 .process .track{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;position:relative}
 .process .track::before{content:"";position:absolute;top:48px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,var(--point),var(--hl));opacity:.32;z-index:0}
 .process .st{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 18px;transition:all .25s;position:relative;z-index:1;text-align:center}
@@ -204,10 +209,11 @@ nav .btn-fill:hover{background:#9333ea}
 .process .st p{color:var(--sub);font-size:13px;font-weight:500;margin-bottom:16px;word-break:keep-all;min-height:54px}
 .process .st .out{font-size:11.5px;font-weight:600;color:var(--main);background:var(--tint);border-radius:100px;padding:6px 11px;display:inline-block;letter-spacing:-0.01em}
 @media(max-width:960px){.process .track{grid-template-columns:repeat(3,1fr)}.process .track::before{display:none}.process .st p{min-height:0}}
+@media(max-width:720px){.process .photos{grid-template-columns:1fr}}
 @media(max-width:560px){.process .track{grid-template-columns:repeat(2,1fr)}}
 
 /* ---------- ROI (다크, 문서형 결과) ---------- */
-.roi .panel{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;max-width:960px;margin:0 auto;align-items:stretch}
+.roi .panel{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;max-width:960px;margin:0 auto;align-items:start}
 .roi .form{background:rgba(255,255,255,.05);border:1px solid rgba(168,85,247,.24);border-radius:22px;padding:40px}
 .roi label{display:block;font-size:13.5px;font-weight:600;color:#CFC5DB;margin:22px 0 8px}
 .roi label:first-child{margin-top:0}
@@ -232,6 +238,7 @@ nav .btn-fill:hover{background:#9333ea}
 .receipt .pkg{font-size:19px;font-weight:800;margin-bottom:6px}
 .receipt .why{font-size:14px;font-weight:500;color:var(--sub);margin-bottom:22px;word-break:keep-all;flex:1}
 .receipt .btn{justify-content:center}
+.receipt .receipt-photo{width:100%;aspect-ratio:1.62/1;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line);box-shadow:0 18px 34px -28px rgba(75,29,120,.32)}
 @media(max-width:820px){.roi .panel{grid-template-columns:1fr}}
 
 /* ---------- 아이템 (인덱스 리스트) ---------- */
@@ -241,7 +248,12 @@ nav .btn-fill:hover{background:#9333ea}
 .items .it .ihead{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
 .items .it .iic{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .items .it .iic svg{width:23px;height:23px}
-.iic.c1,.iic.c2,.iic.c3,.iic.c4,.iic.c5,.iic.c6{background:var(--tint2);color:var(--main)}
+.iic.c1{background:#EDE7FE;color:#6D28D9}
+.iic.c2{background:#E0F2FE;color:#0369A1}
+.iic.c3{background:#FEF1C7;color:#B45309}
+.iic.c4{background:#FCE7F3;color:#BE185D}
+.iic.c5{background:#D6F5E6;color:#047857}
+.iic.c6{background:#EAE6FE;color:#7C3AED}
 .items .it .dept{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--main);background:var(--tint2);border-radius:100px;padding:5px 12px}
 .items .it h3{font-size:18px;margin-bottom:8px}
 .items .it p{font-size:14px;font-weight:500;color:var(--sub);word-break:keep-all}
@@ -276,15 +288,6 @@ nav .btn-fill:hover{background:#9333ea}
 .proof .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .proof .case{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px 30px;display:flex;flex-direction:column;transition:all .25s}
 .proof .case:hover{border-color:rgba(168,85,247,.4);transform:translateY(-4px);box-shadow:0 26px 54px -30px rgba(75,29,120,.28)}
-.proof .case:not(.feat){cursor:pointer}
-.proof .case:not(.feat):hover{background:var(--dark);border-color:transparent;color:#EEE9F4;box-shadow:0 28px 58px -28px rgba(75,29,120,.55)}
-.proof .case:not(.feat):hover .ind{color:#B4A9C4}
-.proof .case:not(.feat):hover .pkgtag{color:var(--dark);background:var(--amber)}
-.proof .case:not(.feat):hover .cdesc{color:#B4A9C4}
-.proof .case:not(.feat):hover .metrics{border-color:rgba(168,85,247,.28)}
-.proof .case:not(.feat):hover .mv{color:var(--hl)}
-.proof .case:not(.feat):hover .mv small{color:#9d92ad}
-.proof .case:not(.feat):hover .ml{color:#B4A9C4}
 .proof .case.feat{background:var(--dark);color:#EEE9F4;border-color:transparent}
 .proof .ctop{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:20px}
 .proof .ind{font-size:12.5px;font-weight:600;color:var(--sub)}
@@ -294,6 +297,8 @@ nav .btn-fill:hover{background:#9333ea}
 .proof .case h3{font-size:19px;font-weight:800;letter-spacing:-0.02em;margin-bottom:9px}
 .proof .cdesc{font-size:14px;font-weight:500;color:var(--sub);word-break:keep-all;margin-bottom:24px;flex:1;line-height:1.6}
 .proof .case.feat .cdesc{color:#B4A9C4}
+.proof .case-img{display:block;width:100%;aspect-ratio:1.55/1;border-radius:18px;object-fit:cover;margin:0 0 22px;border:1px solid rgba(168,85,247,.18);box-shadow:0 18px 34px -26px rgba(75,29,120,.45)}
+.proof .case.feat .case-img{border-color:rgba(245,208,254,.2);box-shadow:0 18px 38px -28px rgba(0,0,0,.85)}
 .proof .metrics{display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--line);padding-top:22px}
 .proof .case.feat .metrics{border-color:rgba(168,85,247,.28)}
 .proof .m{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
@@ -350,7 +355,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 @media(max-width:520px){footer .fcols{grid-template-columns:1fr 1fr}}
 
 /* ---------- reveal ---------- */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.6,.2,1),transform .6s cubic-bezier(.2,.6,.2,1)}
+.reveal{opacity:1;transform:none;transition:opacity .6s cubic-bezier(.2,.6,.2,1),transform .6s cubic-bezier(.2,.6,.2,1)}
 .reveal.in{opacity:1;transform:none}
 @media(max-width:640px){section{padding:82px 0}.hero{padding:64px 0 84px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
@@ -358,7 +363,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 </head>
 <body>
 
-<!-- 로고 마크 스프라이트 (시안 — G1 미확정) -->
+<!-- 로고 마크 스프라이트 -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <linearGradient id="uveGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4B1D78"/><stop offset="1" stop-color="#A855F7"/></linearGradient>
@@ -376,10 +381,10 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 
 <nav>
   <div class="wrap">
-    <a class="logo" href="#"><svg class="mk"><use href="#uveMarkLt"/></svg>UVE STUDIO <small>(가칭)</small></a>
+    <a class="logo" href="#"><svg class="mk"><use href="#uveMarkLt"/></svg>Vessel AX Studio</a>
     <ul>
-      <li><a href="brand.html">UVE 소개</a></li>
       <li><a href="#process">프로세스</a></li>
+      <li><a href="#items">아이템</a></li>
       <li><a href="#roi">AX 진단</a></li>
       <li><a href="#packages">패키지</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -391,8 +396,8 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 <!-- 모션 티커 -->
 <div class="ticker" aria-hidden="true">
   <div class="track">
-    <span>직무별 AX 워크숍</span><span>업무 자동화 <em>PoC</em></span><span>AI Agent 구축</span><span>성과 리포트</span><span>프롬프트팩 20종</span><span>24시간 내 회신</span>
-    <span>직무별 AX 워크숍</span><span>업무 자동화 <em>PoC</em></span><span>AI Agent 구축</span><span>성과 리포트</span><span>프롬프트팩 20종</span><span>24시간 내 회신</span>
+    <span>직무별 AX 워크숍</span><span>업무 자동화 <em>PoC</em></span><span>AI Agent 구축</span><span>성과 리포트</span><span>프롬프트팩 20종</span>
+    <span>직무별 AX 워크숍</span><span>업무 자동화 <em>PoC</em></span><span>AI Agent 구축</span><span>성과 리포트</span><span>프롬프트팩 20종</span>
   </div>
 </div>
 
@@ -412,26 +417,21 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <div class="glow"></div>
       <div class="ring"></div>
       <div class="ring ring2"></div>
-      <div class="core"><svg class="mk"><use href="#uveMarkLt"/></svg></div>
-      <div class="kw kw1"><span class="pd"></span>교육이 아니라 업무</div>
-      <div class="kw kw2"><span class="pd"></span>산출물이 남습니다</div>
-      <div class="kw kw3"><span class="pd"></span>2주 PoC</div>
-      <div class="kw kw4"><span class="pd"></span>성과로 증명</div>
-      <div class="kw kw5"><span class="pd"></span>직무별 설계</div>
+      <img class="hero-img" src="assets/hero-workshop-people.jpg" alt="">
     </div>
   </div>
 </header>
 
-<!-- 클라이언트 로고 띠 (전부 가상 예시 — 실존 기업 아님) -->
+<!-- 적용 산업 띠 -->
 <section class="clients">
-  <div class="wrap"><p class="clabel">이런 규모의 조직을 위해 설계했습니다 <em>(가상 예시)</em></p></div>
+  <div class="wrap"><p class="clabel">실고객 로고 대신, 먼저 적용 산업과 업무 유형을 보여줍니다</p></div>
   <div class="cmq"><div class="ctrack">
-    <span class="clogo"><span class="cd"></span>노바리테일</span><span class="clogo"><span class="cd"></span>그리드웍스</span><span class="clogo"><span class="cd"></span>메디코어그룹</span><span class="clogo"><span class="cd"></span>한빛금융</span><span class="clogo"><span class="cd"></span>오르비스</span><span class="clogo"><span class="cd"></span>세움로지스</span><span class="clogo"><span class="cd"></span>링크에듀</span>
-    <span class="clogo"><span class="cd"></span>노바리테일</span><span class="clogo"><span class="cd"></span>그리드웍스</span><span class="clogo"><span class="cd"></span>메디코어그룹</span><span class="clogo"><span class="cd"></span>한빛금융</span><span class="clogo"><span class="cd"></span>오르비스</span><span class="clogo"><span class="cd"></span>세움로지스</span><span class="clogo"><span class="cd"></span>링크에듀</span>
+    <span class="clogo"><span class="cd"></span><b>제조</b> 영업 리서치</span><span class="clogo"><span class="cd"></span><b>통신</b> CS 답변 초안</span><span class="clogo"><span class="cd"></span><b>병원</b> 사내문서 검색</span><span class="clogo"><span class="cd"></span><b>교육</b> 운영 리포트</span><span class="clogo"><span class="cd"></span><b>커머스</b> 시장 모니터링</span><span class="clogo"><span class="cd"></span><b>금융</b> 보고 자동화</span>
+    <span class="clogo"><span class="cd"></span><b>제조</b> 영업 리서치</span><span class="clogo"><span class="cd"></span><b>통신</b> CS 답변 초안</span><span class="clogo"><span class="cd"></span><b>병원</b> 사내문서 검색</span><span class="clogo"><span class="cd"></span><b>교육</b> 운영 리포트</span><span class="clogo"><span class="cd"></span><b>커머스</b> 시장 모니터링</span><span class="clogo"><span class="cd"></span><b>금융</b> 보고 자동화</span>
   </div></div>
   <div class="cmq"><div class="ctrack rev">
-    <span class="clogo"><span class="cd"></span>페어HR</span><span class="clogo"><span class="cd"></span>큐브제조</span><span class="clogo"><span class="cd"></span>온다커머스</span><span class="clogo"><span class="cd"></span>브릿지케어</span><span class="clogo"><span class="cd"></span>스톤파트너스</span><span class="clogo"><span class="cd"></span>유니콘팜</span><span class="clogo"><span class="cd"></span>코어시스</span>
-    <span class="clogo"><span class="cd"></span>페어HR</span><span class="clogo"><span class="cd"></span>큐브제조</span><span class="clogo"><span class="cd"></span>온다커머스</span><span class="clogo"><span class="cd"></span>브릿지케어</span><span class="clogo"><span class="cd"></span>스톤파트너스</span><span class="clogo"><span class="cd"></span>유니콘팜</span><span class="clogo"><span class="cd"></span>코어시스</span>
+    <span class="clogo"><span class="cd"></span><b>HR</b> 교육 성과 리포트</span><span class="clogo"><span class="cd"></span><b>영업</b> 제안 메모</span><span class="clogo"><span class="cd"></span><b>CS</b> 문의 분류</span><span class="clogo"><span class="cd"></span><b>운영</b> 회의록 정리</span><span class="clogo"><span class="cd"></span><b>기획</b> 주간 보고</span><span class="clogo"><span class="cd"></span><b>전사</b> 지식 검색</span>
+    <span class="clogo"><span class="cd"></span><b>HR</b> 교육 성과 리포트</span><span class="clogo"><span class="cd"></span><b>영업</b> 제안 메모</span><span class="clogo"><span class="cd"></span><b>CS</b> 문의 분류</span><span class="clogo"><span class="cd"></span><b>운영</b> 회의록 정리</span><span class="clogo"><span class="cd"></span><b>기획</b> 주간 보고</span><span class="clogo"><span class="cd"></span><b>전사</b> 지식 검색</span>
   </div></div>
 </section>
 
@@ -462,13 +462,17 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <h2>6단계로 갑니다.<br>각 단계마다 산출물이 남습니다.</h2>
       <p class="lead">어디서 시작해도 됩니다. 진단이 현재 위치를 알려줍니다.</p>
     </div>
+    <div class="photos">
+      <figure class="photo"><img src="assets/process-diagnosis-workshop.jpg" alt="반복 업무 흐름을 진단하는 워크숍 장면"><b>업무 흐름을 먼저 펼쳐봅니다</b></figure>
+      <figure class="photo"><img src="assets/process-poc-review.jpg" alt="PoC 결과 리포트를 검토하는 장면"><b>검증 결과를 리포트로 남깁니다</b></figure>
+    </div>
     <div class="track">
-      <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><span class="n">STEP 01</span><h3>진단</h3><p>필요한 AX 아이템과 HR 목표를 짚습니다</p><span class="out">AX 진단 리포트</span></div>
-      <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div><span class="n">STEP 02</span><h3>워크숍</h3><p>직무별 실무 과제로 교육을 설계합니다</p><span class="out">프롬프트팩 + 자동화 맵</span></div>
-      <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div><span class="n">STEP 03</span><h3>Prototype</h3><p>3~5일 안에 미니 결과물을 만듭니다</p><span class="out">작동하는 프로토타입</span></div>
-      <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div><span class="n">STEP 04</span><h3>2주 PoC</h3><p>현업 업무 1개로 효과를 검증합니다</p><span class="out">검증된 워크플로우</span></div>
-      <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/><path d="M11 7.5h3.5a2 2 0 0 1 2 2V13"/></svg></div><span class="n">STEP 05</span><h3>Agent</h3><p>반복 업무를 자동화·Agent로 전환합니다</p><span class="out">업무 Agent + 가이드</span></div>
-      <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M8 15v-3M13 15V9M18 15v-6"/></svg></div><span class="n">STEP 06</span><h3>리포트</h3><p>경영진·HR 보고용 성과 자료를 만듭니다</p><span class="out">월간 성과 리포트</span></div>
+      <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>진단</h3><p>필요한 AX 아이템과 HR 목표를 짚습니다</p><span class="out">AX 진단 리포트</span></div>
+      <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div><h3>워크숍</h3><p>직무별 실무 과제로 교육을 설계합니다</p><span class="out">프롬프트팩 + 자동화 맵</span></div>
+      <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div><h3>Prototype</h3><p>3~5일 안에 미니 결과물을 만듭니다</p><span class="out">작동하는 프로토타입</span></div>
+      <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div><h3>2주 PoC</h3><p>현업 업무 1개로 효과를 검증합니다</p><span class="out">검증된 워크플로우</span></div>
+      <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/><path d="M11 7.5h3.5a2 2 0 0 1 2 2V13"/></svg></div><h3>Agent</h3><p>반복 업무를 자동화·Agent로 전환합니다</p><span class="out">업무 Agent + 가이드</span></div>
+      <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M8 15v-3M13 15V9M18 15v-6"/></svg></div><h3>리포트</h3><p>경영진·HR 보고용 성과 자료를 만듭니다</p><span class="out">월간 성과 리포트</span></div>
     </div>
   </div>
 </section>
@@ -535,6 +539,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div class="cases">
       <article class="case feat">
         <div class="ctop"><span class="ind">글로벌 제조 대기업 / 영업 8명</span><span class="pkgtag">AX Agent</span></div>
+        <img class="case-img" src="assets/case-sales-people.jpg" alt="영업 리드 리서치 준비 워크숍 장면">
         <h3>영업 리드 리서치 Agent</h3>
         <p class="cdesc">타겟 기업 조사와 접점 정리, 제안 메모 초안을 Agent가 만들고, 영업은 미팅 준비에 집중.</p>
         <div class="metrics">
@@ -545,6 +550,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       </article>
       <article class="case">
         <div class="ctop"><span class="ind">대형 통신·IT 그룹 / CS 12명</span><span class="pkgtag">AX Workflow</span></div>
+        <img class="case-img" src="assets/case-cs-people.jpg" alt="CS 답변 초안 검수 장면">
         <h3>CS 답변 초안 자동화</h3>
         <p class="cdesc">문의 유형 분류와 1차 답변 초안을 자동화하고, 상담사는 검수와 발송만 담당하도록 재설계.</p>
         <div class="metrics">
@@ -555,6 +561,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       </article>
       <article class="case">
         <div class="ctop"><span class="ind">상급종합병원 / 행정 6명</span><span class="pkgtag">AX Agent</span></div>
+        <img class="case-img" src="assets/case-knowledge-people.jpg" alt="사내문서 검색과 규정 확인 장면">
         <h3>원내 문서 검색 Agent</h3>
         <p class="cdesc">규정·행정 매뉴얼·공문을 물어보면 근거와 함께 답하는 Agent를 구축해 문의 응대 부담을 축소.</p>
         <div class="metrics">
@@ -568,13 +575,13 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   </div>
 </section>
 
-<!-- AX 진단(ROI) — 성과 사례 뒤, 최종 전환 직전으로 이동 -->
+<!-- AX 진단(ROI) - 성과 사례 뒤, 최종 전환 직전으로 이동 -->
 <section class="roi sec-dark" id="roi">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">AX 진단</span>
       <h2 style="color:#fff">숫자로 먼저 확인하세요.</h2>
-      <p class="lead">1분이면 예상 월 절감 비용과 추천 액션이 나옵니다.<br>상세 진단은 24시간 내 회신합니다.</p>
+      <p class="lead">1분이면 예상 월 절감 비용과 추천 액션이 나옵니다.<br>상세 진단은 상담에서 이어서 정리합니다.</p>
     </div>
     <div class="panel">
       <div class="form">
@@ -595,7 +602,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         <p class="note">시간당 인건비 40,000원 가정. 실제 절감폭은 2주 PoC에서 측정해 리포트로 전달합니다.</p>
       </div>
       <div class="receipt">
-        <div class="rt"><b>진단 결과 요약</b><span id="r-date">—</span></div>
+        <div class="rt"><b>진단 결과 요약</b><span id="r-date">-</span></div>
         <div class="rl">예상 월 절감 비용</div>
         <div class="big" id="r-money">3,476,000<small>원/월</small></div>
         <p class="asof">오늘 <span id="r-asof">2026.07.23</span> 입력값 기준 추정치</p>
@@ -605,6 +612,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         <div class="pkg" id="r-pkg">AX Workflow</div>
         <p class="why" id="r-why">부서 단위 반복 업무예요. 워크숍과 2주 PoC로 시작하세요.</p>
         <a class="btn btn-fill" href="contact.html">이 결과로 상담 신청 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <img class="receipt-photo" src="assets/contact-diagnosis-people.jpg" alt="AX 진단 결과를 상담에서 정리하는 장면">
       </div>
     </div>
   </div>
@@ -615,7 +623,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">FAQ</span>
-      <h2>자주 묻는 질문</h2>
+      <h2>자주 묻는 것</h2>
       <p class="lead">문서에 없는 내용은 문의하기를 통해 남겨주시면 담당자가 확인 후 회신드립니다.</p>
     </div>
     <div class="list">
@@ -645,8 +653,8 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         <div class="ans">
           <p>표준 2주 동안 실제 업무 한 개를 골라 워크플로우 또는 Agent 한 종을 만들고, 현업에서 직접 써보며 효과를 측정합니다.</p>
           <ul>
-            <li><b>1주차</b> — 업무 분해와 프로토타입 제작</li>
-            <li><b>2주차</b> — 현업 적용, 사용률·절감 시간 측정</li>
+            <li><b>1주차</b> - 업무 분해와 프로토타입 제작</li>
+            <li><b>2주차</b> - 현업 적용, 사용률·절감 시간 측정</li>
           </ul>
           <p>종료 시 작동하는 결과물과 사용 가이드, 그리고 Before/After가 담긴 결과 리포트를 함께 전달합니다. 시연용이 아니라 계속 쓰는 결과물입니다.</p>
         </div>
@@ -689,7 +697,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <div class="wrap">
     <span class="eyebrow">지금 시작하기</span>
     <h2>우리 팀 반복 업무,<br>진단부터 시작하세요.</h2>
-    <p>진단 <b>10분</b>이면 자동화 기회 Top 3가 나옵니다.<br><b>24시간</b> 안에 회신합니다.</p>
+    <p>진단 <b>10분</b>이면 자동화 기회 Top 3가 나옵니다.<br>상담에서 실행 우선순위를 함께 정리합니다.</p>
     <div class="cta">
       <a class="btn btn-inv btn-lg" href="contact.html">AX 진단 받기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn btn-line btn-lg" href="#packages">패키지 다시 보기</a>
@@ -701,9 +709,9 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <div class="wrap">
     <div class="ftop">
       <div class="fbrand">
-        <a class="logo" href="#"><svg class="mk"><use href="#uveMarkLt"/></svg>UVE STUDIO <small>(가칭)</small></a>
+        <a class="logo" href="#"><svg class="mk"><use href="#uveMarkLt"/></svg>Vessel AX Studio</a>
         <p>교육을 업무 성과로 잇는 AX 실행 스튜디오. 진단부터 2주 PoC, Agent 구축, 운영 리포트까지 하나로 연결합니다.</p>
-        <a class="fmail" href="mailto:hello@uve.studio">hello@uve.studio</a>
+        <a class="fmail" href="mailto:hello@vessel.studio">hello@vessel.studio</a>
       </div>
       <div class="fcols">
         <div class="fcol">
@@ -715,7 +723,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         </div>
         <div class="fcol">
           <h5>회사</h5>
-          <a href="brand.html">UVE 소개</a>
+          <a href="#define">UVE 소개</a>
           <a href="#proof">성과 사례</a>
           <a href="#faq">FAQ</a>
           <a href="contact.html">문의하기</a>
@@ -725,20 +733,20 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
           <a href="contact.html">AX 진단 신청</a>
           <a href="contact.html?type=package">패키지 상담</a>
           <a href="contact.html?type=proposal">제안서 받기</a>
-          <span class="fnote">평일 10:00–19:00 · 24시간 내 회신</span>
+          <span class="fnote">평일 10:00-19:00</span>
         </div>
       </div>
     </div>
     <div class="fbot">
-      <div>© 2026 UVE STUDIO (가칭). 상호·사업자 정보는 오픈 시 갱신됩니다.</div>
-      <div><a href="#">개인정보 처리방침</a> · <a href="#">이용약관</a> · <a href="#">이메일무단수집거부</a></div>
+      <div>© 2026 Vessel AX Studio. 상호·사업자 정보는 오픈 시 갱신됩니다.</div>
+      <div><a href="#">개인정보 처리방침</a> / <a href="#">이용약관</a> / <a href="#">이메일무단수집거부</a></div>
     </div>
   </div>
 </footer>
 
 <!-- 플로팅 CTA 레일 -->
 <div class="fab">
-  <a class="fab-cta" href="#roi"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M16.9 16.9l2.1 2.1M19.1 4.9l-2.1 2.1M7 16.9l-2.1 2.1"/></svg></span><span>AX 진단 받기</span></a>
+  <a class="fab-cta" href="#roi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>AX 진단 받기</span></a>
   <button class="fab-top" id="fabTop" aria-label="맨 위로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 </div>
 
