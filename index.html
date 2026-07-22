@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<title>UVE STUDIO — 교육이 끝나면, 업무가 바뀌어 있어야 합니다</title>
-<meta name="description" content="UVE는 직무별 AX 워크숍, 업무 자동화 PoC, AI Agent 구축을 하나의 실행 로드맵으로 연결합니다.">
+<title>Vessel AX Studio - 교육이 끝나면, 업무가 바뀌어 있어야 합니다</title>
+<meta name="description" content="Vessel은 직무별 AX 워크숍, 업무 자동화 PoC, AI Agent 구축을 하나의 실행 로드맵으로 연결합니다.">
 <!-- 생성: Claude Fable 5 2026-07-20 | 검토: 미검토 -->
-<!-- v4 — 폰트/레이아웃 참고: nbcamp.spartaclub.kr (Pretendard 웨이트 위계 / 클린 뉴트럴 레이아웃) -->
+<!-- v4 - 폰트/레이아웃 참고: nbcamp.spartaclub.kr (Pretendard 웨이트 위계 / 클린 뉴트럴 레이아웃) -->
 <!-- 핵심: 세리프 악센트 제거 → Pretendard 전용. 헤드 800 / 서브헤드 700 / 본문 500(Medium) -->
-<!-- ⚠️ G1: "UVE STUDIO (가칭)" / G0: 가격 IA 초안 / G2: 사례 [채움 예정] -->
+<!-- ⚠️ G0: 가격 IA 초안 / G2: 사례 [파일럿 후 실측 교체] -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -53,7 +53,7 @@ h3{font-size:20px;font-weight:700;letter-spacing:-0.02em;line-height:1.4}
 section{padding:120px 0}
 .sec-tint{background:var(--tint)}
 .sec-dark{background:var(--dark);color:#EEE9F4}
-/* 섹션 헤더 — 가운데 정렬 (Sparta 패턴) */
+/* 섹션 헤더 - 가운데 정렬 (Sparta 패턴) */
 .sec-head{text-align:center;max-width:680px;margin:0 auto 64px}
 .sec-head .eyebrow{display:block;margin-bottom:16px}
 .sec-head h2{margin-bottom:18px}
@@ -61,7 +61,7 @@ section{padding:120px 0}
 .sec-dark .sec-head .eyebrow{color:var(--hl)}
 .sec-dark .lead{color:#B4A9C4}
 
-/* ---------- nav (다크 — 티커/히어로와 통일) ---------- */
+/* ---------- nav (다크 - 티커/히어로와 통일) ---------- */
 nav{position:sticky;top:0;z-index:40;background:rgba(20,16,25,.85);backdrop-filter:blur(16px) saturate(1.3);border-bottom:1px solid rgba(168,85,247,.16)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
 .logo{font-weight:800;font-size:19px;text-decoration:none;letter-spacing:-0.03em;display:flex;align-items:center;gap:8px;color:#fff}
@@ -107,7 +107,7 @@ nav .btn-fill:hover{background:#9333ea}
 .hero .btn-line{background:transparent;border-color:rgba(168,85,247,.4);color:#EEE9F4}
 .hero .btn-line:hover{border-color:var(--point);color:#fff}
 
-/* 히어로 모션 패널 — 로고 마크 + 철학 키워드 슝슝 */
+/* 히어로 모션 패널 - 리포트 목업 */
 .stage{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center}
 .stage .glow{position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,.45),transparent 66%);filter:blur(20px)}
 .stage .ring{position:absolute;width:300px;height:300px;border-radius:50%;border:1px solid rgba(168,85,247,.3);animation:spin 18s linear infinite}
@@ -116,6 +116,7 @@ nav .btn-fill:hover{background:#9333ea}
 .stage .ring2::before{width:7px;height:7px;background:var(--point)}
 @keyframes spin{to{transform:rotate(360deg)}}
 .stage .core{position:relative;z-index:2;width:132px;height:132px;border-radius:32px;background:linear-gradient(150deg,#2a1440,#160820);border:1px solid rgba(168,85,247,.35);display:flex;align-items:center;justify-content:center;box-shadow:0 30px 70px -30px rgba(168,85,247,.6);animation:floaty 6s ease-in-out infinite alternate}
+.stage .hero-img{position:relative;z-index:3;width:min(100%,540px);display:block;border-radius:28px;box-shadow:0 34px 92px -34px rgba(0,0,0,.78),0 0 0 1px rgba(245,208,254,.18);animation:floaty 6s ease-in-out infinite alternate}
 @keyframes floaty{to{transform:translateY(-12px)}}
 .stage .core .mk{width:72px;height:72px}
 .stage .kw{position:absolute;font-size:13px;font-weight:600;color:#EEE9F4;background:rgba(255,255,255,.06);border:1px solid rgba(168,85,247,.3);backdrop-filter:blur(6px);border-radius:100px;padding:9px 15px;white-space:nowrap;box-shadow:0 14px 30px -14px rgba(0,0,0,.6);animation:drift 7s ease-in-out infinite alternate}
@@ -152,6 +153,7 @@ nav .btn-fill:hover{background:#9333ea}
 .clients:hover .ctrack{animation-play-state:paused}
 .clogo{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 22px;font-weight:800;font-size:15.5px;letter-spacing:-0.03em;color:#4a4356;flex-shrink:0}
 .clogo .cd{width:9px;height:9px;border-radius:3px;background:linear-gradient(135deg,var(--main),var(--point));transform:rotate(45deg);flex-shrink:0}
+.clogo b{font-weight:800;color:var(--main)}
 
 /* ---------- 문제 (뉴트럴 카드 그리드) ---------- */
 .problem .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -287,6 +289,8 @@ nav .btn-fill:hover{background:#9333ea}
 .proof .case h3{font-size:19px;font-weight:800;letter-spacing:-0.02em;margin-bottom:9px}
 .proof .cdesc{font-size:14px;font-weight:500;color:var(--sub);word-break:keep-all;margin-bottom:24px;flex:1;line-height:1.6}
 .proof .case.feat .cdesc{color:#B4A9C4}
+.proof .case-img{display:block;width:100%;aspect-ratio:1.55/1;border-radius:18px;object-fit:cover;margin:0 0 22px;border:1px solid rgba(168,85,247,.18);box-shadow:0 18px 34px -26px rgba(75,29,120,.45)}
+.proof .case.feat .case-img{border-color:rgba(245,208,254,.2);box-shadow:0 18px 38px -28px rgba(0,0,0,.85)}
 .proof .metrics{display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--line);padding-top:22px}
 .proof .case.feat .metrics{border-color:rgba(168,85,247,.28)}
 .proof .m{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
@@ -343,7 +347,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 @media(max-width:520px){footer .fcols{grid-template-columns:1fr 1fr}}
 
 /* ---------- reveal ---------- */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.6,.2,1),transform .6s cubic-bezier(.2,.6,.2,1)}
+.reveal{opacity:1;transform:none;transition:opacity .6s cubic-bezier(.2,.6,.2,1),transform .6s cubic-bezier(.2,.6,.2,1)}
 .reveal.in{opacity:1;transform:none}
 @media(max-width:640px){section{padding:82px 0}.hero{padding:64px 0 84px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
@@ -351,7 +355,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 </head>
 <body>
 
-<!-- 로고 마크 스프라이트 (시안 — G1 미확정) -->
+<!-- 로고 마크 스프라이트 -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <linearGradient id="uveGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4B1D78"/><stop offset="1" stop-color="#A855F7"/></linearGradient>
@@ -369,7 +373,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 
 <nav>
   <div class="wrap">
-    <a class="logo" href="#"><svg class="mk"><use href="#uveMarkLt"/></svg>UVE STUDIO <small>(가칭)</small></a>
+    <a class="logo" href="#"><svg class="mk"><use href="#uveMarkLt"/></svg>Vessel AX Studio</a>
     <ul>
       <li><a href="#process">프로세스</a></li>
       <li><a href="#items">아이템</a></li>
@@ -405,26 +409,21 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <div class="glow"></div>
       <div class="ring"></div>
       <div class="ring ring2"></div>
-      <div class="core"><svg class="mk"><use href="#uveMarkLt"/></svg></div>
-      <div class="kw kw1"><span class="pd"></span>교육이 아니라 업무</div>
-      <div class="kw kw2"><span class="pd"></span>산출물이 남습니다</div>
-      <div class="kw kw3"><span class="pd"></span>2주 PoC</div>
-      <div class="kw kw4"><span class="pd"></span>성과로 증명</div>
-      <div class="kw kw5"><span class="pd"></span>직무별 설계</div>
+      <img class="hero-img" src="assets/hero-ax-report.png" alt="">
     </div>
   </div>
 </header>
 
-<!-- 클라이언트 로고 띠 (전부 가상 예시 — 실존 기업 아님) -->
+<!-- 적용 산업 띠 -->
 <section class="clients">
-  <div class="wrap"><p class="clabel">이런 규모의 조직을 위해 설계했습니다 <em>(가상 예시)</em></p></div>
+  <div class="wrap"><p class="clabel">실고객 로고 대신, 먼저 적용 산업과 업무 유형을 보여줍니다</p></div>
   <div class="cmq"><div class="ctrack">
-    <span class="clogo"><span class="cd"></span>노바리테일</span><span class="clogo"><span class="cd"></span>그리드웍스</span><span class="clogo"><span class="cd"></span>메디코어그룹</span><span class="clogo"><span class="cd"></span>한빛금융</span><span class="clogo"><span class="cd"></span>오르비스</span><span class="clogo"><span class="cd"></span>세움로지스</span><span class="clogo"><span class="cd"></span>링크에듀</span>
-    <span class="clogo"><span class="cd"></span>노바리테일</span><span class="clogo"><span class="cd"></span>그리드웍스</span><span class="clogo"><span class="cd"></span>메디코어그룹</span><span class="clogo"><span class="cd"></span>한빛금융</span><span class="clogo"><span class="cd"></span>오르비스</span><span class="clogo"><span class="cd"></span>세움로지스</span><span class="clogo"><span class="cd"></span>링크에듀</span>
+    <span class="clogo"><span class="cd"></span><b>제조</b> 영업 리서치</span><span class="clogo"><span class="cd"></span><b>통신</b> CS 답변 초안</span><span class="clogo"><span class="cd"></span><b>병원</b> 사내문서 검색</span><span class="clogo"><span class="cd"></span><b>교육</b> 운영 리포트</span><span class="clogo"><span class="cd"></span><b>커머스</b> 시장 모니터링</span><span class="clogo"><span class="cd"></span><b>금융</b> 보고 자동화</span>
+    <span class="clogo"><span class="cd"></span><b>제조</b> 영업 리서치</span><span class="clogo"><span class="cd"></span><b>통신</b> CS 답변 초안</span><span class="clogo"><span class="cd"></span><b>병원</b> 사내문서 검색</span><span class="clogo"><span class="cd"></span><b>교육</b> 운영 리포트</span><span class="clogo"><span class="cd"></span><b>커머스</b> 시장 모니터링</span><span class="clogo"><span class="cd"></span><b>금융</b> 보고 자동화</span>
   </div></div>
   <div class="cmq"><div class="ctrack rev">
-    <span class="clogo"><span class="cd"></span>페어HR</span><span class="clogo"><span class="cd"></span>큐브제조</span><span class="clogo"><span class="cd"></span>온다커머스</span><span class="clogo"><span class="cd"></span>브릿지케어</span><span class="clogo"><span class="cd"></span>스톤파트너스</span><span class="clogo"><span class="cd"></span>유니콘팜</span><span class="clogo"><span class="cd"></span>코어시스</span>
-    <span class="clogo"><span class="cd"></span>페어HR</span><span class="clogo"><span class="cd"></span>큐브제조</span><span class="clogo"><span class="cd"></span>온다커머스</span><span class="clogo"><span class="cd"></span>브릿지케어</span><span class="clogo"><span class="cd"></span>스톤파트너스</span><span class="clogo"><span class="cd"></span>유니콘팜</span><span class="clogo"><span class="cd"></span>코어시스</span>
+    <span class="clogo"><span class="cd"></span><b>HR</b> 교육 성과 리포트</span><span class="clogo"><span class="cd"></span><b>영업</b> 제안 메모</span><span class="clogo"><span class="cd"></span><b>CS</b> 문의 분류</span><span class="clogo"><span class="cd"></span><b>운영</b> 회의록 정리</span><span class="clogo"><span class="cd"></span><b>기획</b> 주간 보고</span><span class="clogo"><span class="cd"></span><b>전사</b> 지식 검색</span>
+    <span class="clogo"><span class="cd"></span><b>HR</b> 교육 성과 리포트</span><span class="clogo"><span class="cd"></span><b>영업</b> 제안 메모</span><span class="clogo"><span class="cd"></span><b>CS</b> 문의 분류</span><span class="clogo"><span class="cd"></span><b>운영</b> 회의록 정리</span><span class="clogo"><span class="cd"></span><b>기획</b> 주간 보고</span><span class="clogo"><span class="cd"></span><b>전사</b> 지식 검색</span>
   </div></div>
 </section>
 
@@ -528,6 +527,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div class="cases">
       <article class="case feat">
         <div class="ctop"><span class="ind">글로벌 제조 대기업 / 영업 8명</span><span class="pkgtag">AX Agent</span></div>
+        <img class="case-img" src="assets/case-sales-dashboard.png" alt="영업 리드 리서치 Agent 성과 대시보드 목업">
         <h3>영업 리드 리서치 Agent</h3>
         <p class="cdesc">타겟 기업 조사와 접점 정리, 제안 메모 초안을 Agent가 만들고, 영업은 미팅 준비에 집중.</p>
         <div class="metrics">
@@ -538,6 +538,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       </article>
       <article class="case">
         <div class="ctop"><span class="ind">대형 통신·IT 그룹 / CS 12명</span><span class="pkgtag">AX Workflow</span></div>
+        <img class="case-img" src="assets/case-cs-dashboard.png" alt="CS 답변 초안 자동화 성과 대시보드 목업">
         <h3>CS 답변 초안 자동화</h3>
         <p class="cdesc">문의 유형 분류와 1차 답변 초안을 자동화하고, 상담사는 검수와 발송만 담당하도록 재설계.</p>
         <div class="metrics">
@@ -548,6 +549,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       </article>
       <article class="case">
         <div class="ctop"><span class="ind">상급종합병원 / 행정 6명</span><span class="pkgtag">AX Agent</span></div>
+        <img class="case-img" src="assets/case-knowledge-dashboard.png" alt="사내문서 검색 Agent 성과 대시보드 목업">
         <h3>원내 문서 검색 Agent</h3>
         <p class="cdesc">규정·행정 매뉴얼·공문을 물어보면 근거와 함께 답하는 Agent를 구축해 문의 응대 부담을 축소.</p>
         <div class="metrics">
@@ -561,7 +563,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   </div>
 </section>
 
-<!-- AX 진단(ROI) — 성과 사례 뒤, 최종 전환 직전으로 이동 -->
+<!-- AX 진단(ROI) - 성과 사례 뒤, 최종 전환 직전으로 이동 -->
 <section class="roi sec-dark" id="roi">
   <div class="wrap">
     <div class="sec-head">
@@ -588,7 +590,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         <p class="note">시간당 인건비 40,000원 가정. 실제 절감폭은 2주 PoC에서 측정해 리포트로 전달합니다.</p>
       </div>
       <div class="receipt">
-        <div class="rt"><b>진단 결과 요약</b><span id="r-date">—</span></div>
+        <div class="rt"><b>진단 결과 요약</b><span id="r-date">-</span></div>
         <div class="rl">예상 월 절감 비용</div>
         <div class="big" id="r-money">3,476,000<small>원/월</small></div>
         <p class="asof">오늘 <span id="r-asof">2026.07.23</span> 입력값 기준 추정치</p>
@@ -638,8 +640,8 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         <div class="ans">
           <p>표준 2주 동안 실제 업무 한 개를 골라 워크플로우 또는 Agent 한 종을 만들고, 현업에서 직접 써보며 효과를 측정합니다.</p>
           <ul>
-            <li><b>1주차</b> — 업무 분해와 프로토타입 제작</li>
-            <li><b>2주차</b> — 현업 적용, 사용률·절감 시간 측정</li>
+            <li><b>1주차</b> - 업무 분해와 프로토타입 제작</li>
+            <li><b>2주차</b> - 현업 적용, 사용률·절감 시간 측정</li>
           </ul>
           <p>종료 시 작동하는 결과물과 사용 가이드, 그리고 Before/After가 담긴 결과 리포트를 함께 전달합니다. 시연용이 아니라 계속 쓰는 결과물입니다.</p>
         </div>
@@ -694,9 +696,9 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <div class="wrap">
     <div class="ftop">
       <div class="fbrand">
-        <a class="logo" href="#"><svg class="mk"><use href="#uveMarkLt"/></svg>UVE STUDIO <small>(가칭)</small></a>
+        <a class="logo" href="#"><svg class="mk"><use href="#uveMarkLt"/></svg>Vessel AX Studio</a>
         <p>교육을 업무 성과로 잇는 AX 실행 스튜디오. 진단부터 2주 PoC, Agent 구축, 운영 리포트까지 하나로 연결합니다.</p>
-        <a class="fmail" href="mailto:hello@uve.studio">hello@uve.studio</a>
+        <a class="fmail" href="mailto:hello@vessel.studio">hello@vessel.studio</a>
       </div>
       <div class="fcols">
         <div class="fcol">
@@ -718,13 +720,13 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
           <a href="contact.html">AX 진단 신청</a>
           <a href="contact.html?type=package">패키지 상담</a>
           <a href="contact.html?type=proposal">제안서 받기</a>
-          <span class="fnote">평일 10:00–19:00 · 24시간 내 회신</span>
+          <span class="fnote">평일 10:00-19:00 / 24시간 내 회신</span>
         </div>
       </div>
     </div>
     <div class="fbot">
-      <div>© 2026 UVE STUDIO (가칭). 상호·사업자 정보는 오픈 시 갱신됩니다.</div>
-      <div><a href="#">개인정보 처리방침</a> · <a href="#">이용약관</a> · <a href="#">이메일무단수집거부</a></div>
+      <div>© 2026 Vessel AX Studio. 상호·사업자 정보는 오픈 시 갱신됩니다.</div>
+      <div><a href="#">개인정보 처리방침</a> / <a href="#">이용약관</a> / <a href="#">이메일무단수집거부</a></div>
     </div>
   </div>
 </footer>

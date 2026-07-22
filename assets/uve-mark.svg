@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vessel mark">
+  <defs>
+    <linearGradient id="vesselGradient" x1="10" y1="8" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5D0FE"/>
+      <stop offset="0.48" stop-color="#A855F7"/>
+      <stop offset="1" stop-color="#4B1D78"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#141019"/>
+  <path d="M20 23v11c0 7.2 5 12 12 12s12-4.8 12-12V23" fill="none" stroke="url(#vesselGradient)" stroke-width="6" stroke-linecap="round"/>
+  <rect x="28.5" y="10.5" width="7" height="7" rx="1.6" transform="rotate(45 32 14)" fill="url(#vesselGradient)"/>
+</svg>
