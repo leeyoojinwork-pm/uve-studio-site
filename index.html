@@ -131,10 +131,13 @@ nav .btn-fill:hover{background:#9333ea}
 
 /* ---------- 플로팅 CTA 레일 (오른쪽 고정) ---------- */
 .fab{position:fixed;right:22px;bottom:26px;z-index:50;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-.fab .fab-cta{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;background:linear-gradient(150deg,#5a2790,var(--main));color:#fff;font-weight:700;font-size:15px;letter-spacing:-0.01em;padding:16px 22px;border-radius:18px;text-decoration:none;box-shadow:0 12px 34px -10px rgba(75,29,120,.7),inset 0 1px 0 rgba(255,255,255,.14);transition:all .22s}
-.fab .fab-cta:hover{transform:translateY(-3px);box-shadow:0 18px 40px -10px rgba(75,29,120,.8),inset 0 1px 0 rgba(255,255,255,.14)}
-.fab .fab-cta .ic{width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.fab .fab-cta .ic svg{width:15px;height:15px}
+.fab .fab-cta{position:relative;display:inline-flex;align-items:center;gap:11px;white-space:nowrap;background:linear-gradient(150deg,#6b30a8,var(--main));color:#fff;font-weight:700;font-size:15px;letter-spacing:-0.01em;padding:12px 24px 12px 12px;border-radius:100px;text-decoration:none;box-shadow:0 14px 36px -10px rgba(75,29,120,.75),inset 0 1px 0 rgba(255,255,255,.16);transition:all .22s}
+.fab .fab-cta::before{content:"";position:absolute;inset:0;border-radius:100px;border:2px solid var(--point);animation:fpulse 2.2s ease-out infinite;pointer-events:none}
+@keyframes fpulse{0%{transform:scale(1);opacity:.55}70%{transform:scale(1.16);opacity:0}100%{opacity:0}}
+.fab .fab-cta:hover{transform:translateY(-3px);box-shadow:0 20px 44px -10px rgba(75,29,120,.85),inset 0 1px 0 rgba(255,255,255,.16)}
+.fab .fab-cta .ic{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;animation:ispin 8s linear infinite}
+@keyframes ispin{to{transform:rotate(360deg)}}
+.fab .fab-cta .ic svg{width:20px;height:20px}
 .fab .fab-top{width:48px;height:48px;border-radius:14px;background:#fff;border:1px solid var(--line);color:var(--main);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 26px -10px rgba(75,29,120,.4);opacity:0;transform:translateY(10px);pointer-events:none;transition:all .25s;align-self:flex-end}
 .fab .fab-top.show{opacity:1;transform:none;pointer-events:auto}
 .fab .fab-top:hover{background:var(--tint);transform:translateY(-2px)}
@@ -238,12 +241,7 @@ nav .btn-fill:hover{background:#9333ea}
 .items .it .ihead{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
 .items .it .iic{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .items .it .iic svg{width:23px;height:23px}
-.iic.c1{background:#EDE7FE;color:#6D28D9}
-.iic.c2{background:#E0F2FE;color:#0369A1}
-.iic.c3{background:#FEF1C7;color:#B45309}
-.iic.c4{background:#FCE7F3;color:#BE185D}
-.iic.c5{background:#D6F5E6;color:#047857}
-.iic.c6{background:#EAE6FE;color:#7C3AED}
+.iic.c1,.iic.c2,.iic.c3,.iic.c4,.iic.c5,.iic.c6{background:var(--tint2);color:var(--main)}
 .items .it .dept{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--main);background:var(--tint2);border-radius:100px;padding:5px 12px}
 .items .it h3{font-size:18px;margin-bottom:8px}
 .items .it p{font-size:14px;font-weight:500;color:var(--sub);word-break:keep-all}
@@ -278,6 +276,15 @@ nav .btn-fill:hover{background:#9333ea}
 .proof .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .proof .case{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px 30px;display:flex;flex-direction:column;transition:all .25s}
 .proof .case:hover{border-color:rgba(168,85,247,.4);transform:translateY(-4px);box-shadow:0 26px 54px -30px rgba(75,29,120,.28)}
+.proof .case:not(.feat){cursor:pointer}
+.proof .case:not(.feat):hover{background:var(--dark);border-color:transparent;color:#EEE9F4;box-shadow:0 28px 58px -28px rgba(75,29,120,.55)}
+.proof .case:not(.feat):hover .ind{color:#B4A9C4}
+.proof .case:not(.feat):hover .pkgtag{color:var(--dark);background:var(--amber)}
+.proof .case:not(.feat):hover .cdesc{color:#B4A9C4}
+.proof .case:not(.feat):hover .metrics{border-color:rgba(168,85,247,.28)}
+.proof .case:not(.feat):hover .mv{color:var(--hl)}
+.proof .case:not(.feat):hover .mv small{color:#9d92ad}
+.proof .case:not(.feat):hover .ml{color:#B4A9C4}
 .proof .case.feat{background:var(--dark);color:#EEE9F4;border-color:transparent}
 .proof .ctop{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:20px}
 .proof .ind{font-size:12.5px;font-weight:600;color:var(--sub)}
@@ -731,7 +738,7 @@ footer .fbot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 
 <!-- 플로팅 CTA 레일 -->
 <div class="fab">
-  <a class="fab-cta" href="#roi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>AX 진단 받기</span></a>
+  <a class="fab-cta" href="#roi"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M16.9 16.9l2.1 2.1M19.1 4.9l-2.1 2.1M7 16.9l-2.1 2.1"/></svg></span><span>AX 진단 받기</span></a>
   <button class="fab-top" id="fabTop" aria-label="맨 위로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 </div>
 
