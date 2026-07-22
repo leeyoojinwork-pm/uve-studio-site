@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<title>AX 진단 신청 — UVE STUDIO</title>
+<meta name="description" content="1분이면 됩니다. UVE가 자동화 기회 Top 3와 추천 시작점을 담아 24시간 내 회신합니다.">
+<!-- 생성: Claude Fable 5 2026-07-20 | 검토: 미검토 -->
+<!-- 참고 레이아웃: flex.team / sabangnet / herue-lab 문의폼 (좌 신뢰·프로세스 + 우 폼 2단) -->
+<!-- ⚠️ 폼 전송: 현재 데모 알림. 오픈 전 Formspree/Tally 엔드포인트로 교체 [TODO] -->
+<!-- ⚠️ G1: "UVE STUDIO (가칭)" -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --main:#4B1D78; --point:#A855F7; --hl:#F5D0FE; --dark:#141019; --amber:#FFC94D;
+  --bg:#FFFFFF; --tint:#F7F5FB; --tint2:#F2EEF9; --ink:#17121D; --sub:#6A6175; --line:#ECE7F2;
+  --sans:'Pretendard Variable',Pretendard,-apple-system,'system-ui',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;font-weight:500;-webkit-font-smoothing:antialiased;letter-spacing:-0.01em}
+.mono{font-family:var(--mono);letter-spacing:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+::selection{background:var(--hl);color:var(--main)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-weight:800;font-size:19px;text-decoration:none;letter-spacing:-0.03em;display:flex;align-items:center;gap:8px}
+.logo .dot{width:9px;height:9px;border-radius:3px;background:linear-gradient(135deg,var(--main),var(--point));transform:rotate(45deg)}
+.logo small{font-weight:500;color:var(--sub);font-size:11.5px}
+.back{color:var(--sub);text-decoration:none;font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:6px;transition:.2s}
+.back:hover{color:var(--main)}
+
+/* layout */
+.page{padding:70px 0 110px;background:
+  radial-gradient(60% 50% at 85% 0%,rgba(168,85,247,.08),transparent 60%),var(--bg)}
+.grid{display:grid;grid-template-columns:1fr 1.08fr;gap:56px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr;gap:44px}}
+
+/* left column */
+.intro .eyebrow{font-size:15px;font-weight:700;color:var(--main);display:inline-flex;align-items:center;gap:8px;background:var(--tint2);border-radius:100px;padding:8px 16px;margin-bottom:22px}
+.intro .eyebrow .pd{width:7px;height:7px;border-radius:50%;background:var(--point)}
+.intro h1{font-size:clamp(32px,4.2vw,46px);font-weight:800;letter-spacing:-0.038em;line-height:1.22;margin-bottom:18px}
+.intro h1 b{color:var(--main)}
+.intro .sub{color:var(--sub);font-size:17.5px;font-weight:500;max-width:430px;margin-bottom:36px;word-break:keep-all}
+.promise{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px}
+.promise span{font-size:13.5px;font-weight:600;color:var(--main);background:var(--tint);border:1px solid var(--line);border-radius:100px;padding:9px 15px;display:flex;align-items:center;gap:7px}
+.promise span svg{width:14px;height:14px;color:var(--point)}
+/* 진행 스텝 */
+.steps{border-top:1px solid var(--line);padding-top:8px;margin-bottom:40px}
+.steps .s{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:start}
+.steps .s .n{font-family:var(--mono);font-size:12.5px;font-weight:700;color:#fff;background:var(--main);width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center}
+.steps .s h4{font-size:16px;font-weight:700;letter-spacing:-0.02em;margin-bottom:3px}
+.steps .s p{font-size:14px;font-weight:500;color:var(--sub);word-break:keep-all}
+/* 미니 리포트 미리보기 */
+.preview{background:var(--dark);color:#EEE9F4;border-radius:20px;padding:26px 28px;position:relative;overflow:hidden}
+.preview::before{content:"";position:absolute;inset:-40%;background:radial-gradient(40% 50% at 80% 10%,rgba(168,85,247,.4),transparent 60%);filter:blur(36px);pointer-events:none}
+.preview>*{position:relative;z-index:1}
+.preview .pt{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid rgba(168,85,247,.28);margin-bottom:8px}
+.preview .pt b{font-size:14.5px;font-weight:800}
+.preview .pt span{font-family:var(--mono);font-size:10px;color:var(--hl);background:rgba(168,85,247,.16);border-radius:100px;padding:4px 10px}
+.preview .pr{display:flex;justify-content:space-between;font-size:13px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.preview .pr .k{color:#B4A9C4;font-weight:500}
+.preview .pr .v{font-weight:700}
+.preview .pr .v.hi{color:var(--hl)}
+.preview .pcap{font-size:11.5px;color:#8f83a1;margin-top:14px}
+
+/* right column — form card */
+.formcard{background:#fff;border:1px solid var(--line);border-radius:24px;padding:40px;box-shadow:0 2px 4px rgba(23,18,29,.03),0 30px 64px -34px rgba(75,29,120,.3)}
+.formcard h2{font-size:20px;font-weight:800;letter-spacing:-0.025em;margin-bottom:6px}
+.formcard .desc{font-size:14.5px;font-weight:500;color:var(--sub);margin-bottom:28px}
+form{display:grid;gap:20px}
+.field label{display:block;font-size:14px;font-weight:700;letter-spacing:-0.01em;margin-bottom:9px}
+.field label .req{color:var(--point);margin-left:2px}
+input,select,textarea{width:100%;padding:14px 15px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:500;font-size:15px;transition:border .2s,box-shadow .2s}
+input::placeholder,textarea::placeholder{color:#B4ACBF}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--point);box-shadow:0 0 0 3px rgba(168,85,247,.12)}
+select{appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%23A855F7' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 5l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:42px}
+textarea{resize:vertical;min-height:110px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:520px){.two{grid-template-columns:1fr}}
+/* 문의 유형 칩 (라디오) */
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:520px){.chips{grid-template-columns:1fr}}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip{display:block;cursor:pointer}
+.chip .box{border:1px solid var(--line);border-radius:12px;padding:14px 12px;text-align:center;transition:all .18s;background:var(--bg)}
+.chip .box b{display:block;font-size:14.5px;font-weight:700;letter-spacing:-0.02em;margin-bottom:2px}
+.chip .box small{font-size:11.5px;font-weight:500;color:var(--sub)}
+.chip:hover .box{border-color:rgba(168,85,247,.5)}
+.chip input:checked+.box{border-color:var(--main);background:var(--tint);box-shadow:0 0 0 1px var(--main) inset}
+.chip input:checked+.box b{color:var(--main)}
+.chip input:focus-visible+.box{box-shadow:0 0 0 3px rgba(168,85,247,.2)}
+/* 동의 */
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;font-weight:500;color:var(--sub);line-height:1.5}
+.agree input{width:auto;margin-top:2px;accent-color:var(--main);flex-shrink:0}
+.agree a{color:var(--main);text-decoration:underline;text-underline-offset:2px}
+/* 제출 */
+.submit{padding:17px;border:none;border-radius:12px;background:var(--main);color:#fff;font-size:16px;font-weight:700;cursor:pointer;font-family:var(--sans);transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.submit:hover{background:#3d1663}
+.submit svg{width:16px;height:16px}
+.formnote{font-size:12.5px;font-weight:500;color:var(--sub);text-align:center}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg width="24" height="24" viewBox="0 0 32 32" style="flex-shrink:0"><defs><linearGradient id="ug" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4B1D78"/><stop offset="1" stop-color="#A855F7"/></linearGradient></defs><path d="M10 11 L10 17 A6 6 0 0 0 22 17 L22 11" fill="none" stroke="url(#ug)" stroke-width="3.4" stroke-linecap="round"/><rect x="13.6" y="4.6" width="4.8" height="4.8" rx="1.1" transform="rotate(45 16 7)" fill="url(#ug)"/></svg>UVE STUDIO <small>(가칭)</small></a>
+    <a class="back" href="index.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>홈으로</a>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="wrap grid">
+
+    <!-- LEFT: 신뢰 / 프로세스 / 미리보기 -->
+    <div class="intro">
+      <span class="eyebrow"><span class="pd"></span>AX 진단 신청</span>
+      <h1>1분이면 됩니다.<br><b>진단 리포트</b>로 회신합니다.</h1>
+      <p class="sub">작성해 주시면 UVE가 자동화 기회 Top 3와 추천 시작점, 예상 절감치를 담아 회신합니다.</p>
+
+      <div class="promise">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>24시간 내 회신</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>진단 무료</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18.36 6.64A9 9 0 1 1 5.64 6.64M12 2v10"/></svg>영업 전화 없음</span>
+      </div>
+
+      <div class="steps">
+        <div class="s"><div class="n">01</div><div><h4>문의 접수</h4><p>작성 즉시 담당자에게 전달됩니다.</p></div></div>
+        <div class="s"><div class="n">02</div><div><h4>AX 진단 리포트 회신</h4><p>자동화 기회 Top 3와 추천 시작점을 24시간 내 보냅니다.</p></div></div>
+        <div class="s"><div class="n">03</div><div><h4>30분 무료 상담</h4><p>원하시면 리포트를 놓고 시작 방법을 함께 정리합니다.</p></div></div>
+      </div>
+
+      <div class="preview">
+        <div class="pt"><b>AX 진단 리포트</b><span>SAMPLE</span></div>
+        <div class="pr"><span class="k">자동화 기회</span><span class="v hi">Top 3 도출</span></div>
+        <div class="pr"><span class="k">예상 절감</span><span class="v hi">월 125.1h</span></div>
+        <div class="pr"><span class="k">추천 시작점</span><span class="v">AX Workflow</span></div>
+        <p class="pcap">실제 리포트는 입력 내용 기준으로 작성됩니다.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: 폼 -->
+    <div class="formcard">
+      <h2>문의 남기기</h2>
+      <p class="desc">필수 항목만 채우면 됩니다. 나머지는 회신 후 함께 정리해요.</p>
+      <form id="axForm">
+        <div class="field">
+          <label>무엇을 도와드릴까요? <span class="req">*</span></label>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="type" value="diagnosis" checked><span class="box"><b>AX 진단</b><small>기회 찾기</small></span></label>
+            <label class="chip"><input type="radio" name="type" value="package"><span class="box"><b>패키지 상담</b><small>도입 검토</small></span></label>
+            <label class="chip"><input type="radio" name="type" value="proposal"><span class="box"><b>제안서 요청</b><small>자료 받기</small></span></label>
+          </div>
+        </div>
+
+        <div class="two">
+          <div class="field"><label>회사명 <span class="req">*</span></label><input name="company" required placeholder="예: 우베컴퍼니"></div>
+          <div class="field"><label>이름 / 직함 <span class="req">*</span></label><input name="name" required placeholder="예: 김우베 팀장"></div>
+        </div>
+
+        <div class="two">
+          <div class="field"><label>회사 이메일 <span class="req">*</span></label><input type="email" name="email" required placeholder="name@company.com"></div>
+          <div class="field"><label>연락처</label><input type="tel" name="phone" placeholder="010-0000-0000"></div>
+        </div>
+
+        <div class="field">
+          <label>대상 인원 <span class="req">*</span></label>
+          <select name="size" required>
+            <option value="">부서/팀 규모를 선택하세요</option>
+            <option>1~5명</option><option>6~15명</option><option>16~50명</option><option>50명 이상</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>줄이고 싶은 업무 <span class="req">*</span></label>
+          <textarea name="goal" required placeholder="예: 주간 보고서 작성에 팀 전체가 주 6시간을 씁니다. 이걸 줄이고 싶습니다."></textarea>
+        </div>
+
+        <label class="agree"><input type="checkbox" required> <span>개인정보 수집·이용에 동의합니다. 수집 항목은 회신 목적으로만 사용합니다. <a href="#">자세히</a></span></label>
+
+        <button type="submit" class="submit">문의 보내기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="formnote">제출 후 24시간 내 회신합니다.</p>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// URL 파라미터로 문의 유형 프리셀렉트 (index의 "제안서 다운로드" 버튼 등)
+(function(){
+  const t = new URLSearchParams(location.search).get('type');
+  if(t){ const el = document.querySelector('input[name="type"][value="'+t+'"]'); if(el) el.checked = true; }
+})();
+
+// [TODO] 오픈 전 연결: Formspree/Tally 등 폼 엔드포인트 + 공용 메일 확정
+document.getElementById('axForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('문의 채널 준비 중입니다. 오픈과 함께 연결됩니다.');
+});
+</script>
+
+</body>
+</html>

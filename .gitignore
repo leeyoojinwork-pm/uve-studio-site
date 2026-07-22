@@ -1,0 +1,11 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# dev copies / notes
+index-v[0-9]*.html
+*-preview*.png
+node_modules/
